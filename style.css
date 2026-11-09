@@ -19,22 +19,23 @@ main {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px #00000014;
+  outline: 3px solid transparent;
 }
 
 .image-container.correct {
-  animation: correct-glow 1s ease-out;
+  animation: correct-feedback 500ms ease-out;
 }
 
 .image-container.incorrect {
-  animation: incorrect-glow 1s ease-out;
+  animation: incorrect-feedback 500ms ease-out;
 }
 
-@keyframes correct-glow {
-  50% { box-shadow: 0 0 28px #4caf5066; }
+@keyframes correct-feedback {
+  35% { outline-color: #4caf50; transform: scale(1.015); }
 }
 
-@keyframes incorrect-glow {
-  50% { box-shadow: 0 0 28px #e0525266; }
+@keyframes incorrect-feedback {
+  35% { outline-color: #e05252; transform: scale(1.015); }
 }
 
 .input-container {

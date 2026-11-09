@@ -3,7 +3,7 @@
  * @property {string} letter
  * @property {string} imageURL
  */
-export const note_store = {
+const note_store = {
     "a4": /** @type {Note} */ {
         letter: "a",
         imageURL: "./Notes/note_a4.png"
@@ -83,7 +83,7 @@ export const note_store = {
 };
 
 let selectionCash=[]
-export function selectNote(){
+function selectNote(){
     const keys = Object.keys(note_store).filter(key=> !selectionCash.includes(key))
     const randomKey = keys[Math.floor(Math.random()*keys.length)]
     selectionCash.push(randomKey)
@@ -93,14 +93,14 @@ export function selectNote(){
     return randomKey
 }
 
-export function correctNote(key,letter){
+function correctNote(key,letter){
     const note = note_store[key]
     return note.letter === letter.trim().toLowerCase()
 }
 
 const logs = []
 
-export function saveLogs(key,userLetter,correctness){
+function saveLogs(key,userLetter,correctness){
     logs.push(`${note_store[key].letter} - ${userLetter} - ${correctness ? "correct" : "incorrect"}`)
     return logs
 }
