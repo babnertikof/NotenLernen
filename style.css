@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f4f6f8;
+  color: #20252b;
+}
+
+main {
+  width: min(420px, calc(100% - 32px));
+  margin: 40px auto;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #00000014;
+}
+
+.image-container.correct {
+  animation: correct-glow 1s ease-out;
+}
+
+.image-container.incorrect {
+  animation: incorrect-glow 1s ease-out;
+}
+
+@keyframes correct-glow {
+  50% { box-shadow: 0 0 28px #4caf5066; }
+}
+
+@keyframes incorrect-glow {
+  50% { box-shadow: 0 0 28px #e0525266; }
+}
+
+.input-container {
+  display: flex;
+  gap: 8px;
+}
+
+.input-container input,
+.input-container button {
+  padding: 8px 12px;
+  font: inherit;
+}
+
+.log-container {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #00000014;
+}
+
+.log-container h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.logs {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.logs:empty::after {
+  content: "No answers yet";
+  color: #68717b;
+}
+
+.logs li {
+  padding: 10px 12px;
+  background: #f4f6f8;
+  border-radius: 6px;
+}
